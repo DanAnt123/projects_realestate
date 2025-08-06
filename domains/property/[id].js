@@ -5,7 +5,7 @@ import { BsGridFill } from 'react-icons/bs';
 import { GoVerified } from 'react-icons/go';
 import millify from 'millify';
 
-import { baseUrl, fetchApi } from '../../utils/fetchApi';
+import { baseUrl, fetchApi } from '../../shared/utils/fetchApi';
 // Updated import for ImageScrollbar after moving the file
 import ImageScrollbar from './ImageScrollbar';
 
