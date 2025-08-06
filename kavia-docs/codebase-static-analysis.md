@@ -10,21 +10,27 @@ This report presents a static code analysis of the *projects_realestate* Next.js
 
 ### Structure and Organization
 
-- **Component-based Organization:**  
-  The codebase is logically organized, featuring a clear separation of concerns between UI components (`/components`), utility functions (`/utils`), and page routes (`/pages`).  
-  - All React components are placed inside the `components` directory and follow clear functional component patterns.
-  - Page files are located in the `pages/` directory, leveraging Next.js routing conventions.
+- **Domain Driven Organization:**  
+  The codebase is structured following Domain Driven Design (DDD) principles. All feature-specific functionality is grouped by domain under the `domains/` directory:
+  - Example domains include `property` and `search`, with each domain containing its own components and supporting scripts.
+  - Shared functionality such as reusable UI components, images, and utility functions are provided under the `shared/` folder, e.g., `shared/components/`, `shared/assets/`, and `shared/utils/`.
+
+- **Page and Routing Structure:**  
+  - Page files remain in the `pages/` directory, but now serve largely as route entry points, passing control to appropriate domain or shared components.
+  - This ensures a clear separation between routing, shared functionality, and business (domain-specific) logic.
 
 - **Readability:**  
-  - Code is generally readable, with consistent indentation and understandable variable names.  
+  - Code remains highly readable thanks to modularization, with consistent indentation and understandable variable/function names.
   - Usage of ES6+ syntax is prevalent throughout the codebase.
 
 - **Reusability:**  
-  - Components like `Footer`, `Navbar`, `Layout`, and UI elements used in property displays are reusable and modular.
+  - Shared components such as `Footer`, `Navbar`, `Layout`, and reusable images/utilities encourage reusability and enforce architectural boundaries.
+  - Domain boundaries help avoid cross-feature entanglements.
 
 - **Configuration:**  
-  - Project configuration files like `next.config.js` and `package.json` are present and correctly structured.
-  - External domain for images is well-defined in `next.config.js` for Next.js image optimization.
+  - Project configuration files like `next.config.js` and `package.json` are present and properly managed.
+  - External domains for images (via Next.js config) are accurately specified.
+
 
 ### Dependency Management
 
