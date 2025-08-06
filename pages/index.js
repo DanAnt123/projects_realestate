@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Flex, Box, Text, Button } from '@chakra-ui/react';
 
+// DDD/shared: prefer imports starting with domains/ or shared/
 import Property from '../domains/property/Property';
 import { baseUrl, fetchApi } from '../shared/utils/fetchApi';
 
