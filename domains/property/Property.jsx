@@ -7,7 +7,8 @@ import { BsGridFill } from 'react-icons/bs';
 import { GoVerified } from 'react-icons/go';
 import millify from 'millify';
 
-import DefaultImage from '../assets/images/house.jpg';
+// Updated DefaultImage import to correct relative path after move
+import DefaultImage from '../../assets/images/house.jpg';
 
 const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, baths, area, agency, isVerified, externalID  } }) => (
   <Link href={`/property/${externalID}`} passHref>
